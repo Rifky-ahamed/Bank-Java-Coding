@@ -23,18 +23,21 @@ class Bank extends Customer{
                     case 1:
                         System.out.print("How much your deposit: ");
                         int deposit = input.nextInt();
+                        System.out.println();
                         deposit(deposit);
                         break;
 
                     case 2:
                         System.out.print("Your Withdraw Amount: ");
                         int withdraw = input.nextInt();
+                        System.out.println();
                         withdraw(withdraw);
                         break;
 
                     case 3:
-                        System.out.println("Your Balance");
+                        System.out.print("Current Balance : ");
                         System.out.println(getAccountBalance());
+                        System.out.println();
                         break;
 
                     case 4:
@@ -81,11 +84,12 @@ class Customer{
     }
 
     public void withdrawMoney(int withdraw){
-        if(accountBalance > 0 && withdraw < accountBalance) {
+        if(accountBalance > 0 && withdraw <= accountBalance) {
             this.accountBalance = this.accountBalance - withdraw;
         }
         else {
             System.out.println("Check your balance ");
+            System.out.println();
         }
     }
 }
